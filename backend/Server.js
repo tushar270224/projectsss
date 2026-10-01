@@ -4,7 +4,7 @@ const cors=require("cors")
 const app=express()
 const path = require("path")
 app.use(cors({
-    origin:"https://projectsss-orpin.vercel.app/",
+    origin:"https://projectsss-84i2v37cj-tushar-27f5.vercel.app/",
     credentials:true
 }))
 app.use(express.json())
