@@ -1,4 +1,4 @@
-export const API_BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:5000"
+export const API_BASE_URL = import.meta.env.VITE_API_URL || "https://projectsss-backend-qdc9h124c-tushar-27f5.vercel.app/"
 
 // Uploaded product/category images may be a bare filename (served from the
 // backend's local /uploads folder) or a full URL (e.g. Vercel Blob), depending

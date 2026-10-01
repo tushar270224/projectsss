@@ -3,7 +3,10 @@ const connectDB=require("./config/db")
 const cors=require("cors")
 const app=express()
 const path = require("path")
-app.use(cors())
+app.use(cors({
+    origin:"https://projectsss-orpin.vercel.app/",
+    credentials:true
+}))
 app.use(express.json())
 const router=require("./routes/userrouter")
 connectDB()
