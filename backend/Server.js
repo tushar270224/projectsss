@@ -3,8 +3,19 @@ const connectDB=require("./config/db")
 const cors=require("cors")
 const app=express()
 const path = require("path")
+// Vercel issues a fresh preview URL (a random hash) on every deploy of the
+// frontend project, so matching one exact URL breaks on the next deploy.
+// This matches the whole family: the stable production domain and every
+// preview build, plus localhost for local dev.
+const allowedOriginPattern = /^https:\/\/projectsss(-[a-z0-9]+)?(-tushar-27f5)?\.vercel\.app$/i
 app.use(cors({
-    origin:"https://projectsss-backend-rj67lzs4p-tushar-27f5.vercel.app/",
+    origin: (origin, callback) => {
+        if (!origin || allowedOriginPattern.test(origin) || /^http:\/\/localhost(:\d+)?$/.test(origin)) {
+            callback(null, true)
+        } else {
+            callback(new Error("Not allowed by CORS"))
+        }
+    },
     credentials:true
 }))
 app.use(express.json())
