@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import axios from "axios"
 import { Link } from 'react-router-dom'
-import { API_BASE_URL } from '../config'
+import { API_BASE_URL, getImageUrl } from '../config'
 
 function Ordersucessfully() {
 
@@ -94,7 +94,7 @@ function Ordersucessfully() {
                                                 <tr key={index}>
                                                     <td>
                                                         <img
-                                                            src={`${API_BASE_URL}/uploads/${data.File}`}
+                                                            src={getImageUrl(data.File)}
                                                             alt=""
                                                             className="w-100 img-fluid blur-up lazyload"
                                                         />

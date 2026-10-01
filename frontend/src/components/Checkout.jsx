@@ -4,7 +4,7 @@ import axios from "axios"
 import { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { Link } from 'react-router-dom'
-import { API_BASE_URL } from '../config'
+import { API_BASE_URL, getImageUrl } from '../config'
 
 function Checkout() {
     const [Address,setaaddress]=useState("")
@@ -437,7 +437,7 @@ const payWithStripe= async(Email)=>{
                                              
                                             <li>
                                                 <div class="cart-image">
-                                                     <img src={`${API_BASE_URL}/uploads/${data.File}`} alt=""
+                                                     <img src={getImageUrl(data.File)} alt=""
                                                     class="w-100 img-fluid blur-up lazyload"/>
                                                        
                                                 </div>

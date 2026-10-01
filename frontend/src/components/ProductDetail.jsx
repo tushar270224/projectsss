@@ -4,7 +4,7 @@ import axios from 'axios'
 import { useState } from 'react'
 import "./ProductDetail.css"
 import Product3DView from './Product3DView'
-import { API_BASE_URL } from '../config'
+import { API_BASE_URL, getImageUrl } from '../config'
 function ProductDetail() {
            useEffect(()=>{
           getda()
@@ -114,7 +114,7 @@ navigate("/Card")
                                         <div>
                                             <div class="position-relative">
                                                 <Product3DView
-                                                    src={`${API_BASE_URL}/uploads/${File}`}
+                                                    src={getImageUrl(File)}
                                                     alt={ProductName}
                                                 />
                                                 {/* <button type="button" class="media-btn" data-bs-toggle="modal"

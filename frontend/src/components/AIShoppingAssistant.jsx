@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react'
 import axios from 'axios'
-import { API_BASE_URL } from '../config'
+import { API_BASE_URL, getImageUrl } from '../config'
 
 function ProductChip({ p, selected, onToggle }) {
   return (
@@ -12,7 +12,7 @@ function ProductChip({ p, selected, onToggle }) {
       }}
     >
       <img
-        src={`${API_BASE_URL}/uploads/${p.File}`}
+        src={getImageUrl(p.File)}
         alt={p.ProductName}
         style={styles.cardImg}
         onError={(e) => { e.target.style.visibility = "hidden" }}

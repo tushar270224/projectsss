@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import axios from "axios"
-import { API_BASE_URL } from '../config'
+import { API_BASE_URL, getImageUrl } from '../config'
 
 // text-only fields must not contain digits, numeric fields must not contain letters
 const productNameRegex = /^(?=.*[A-Za-z])[A-Za-z0-9\s.\-]{2,}$/
@@ -271,7 +271,7 @@ Subcategory}
                             <div class="img-wrapper">
                                 <div class="ribbon"><span>Exclusive</span></div>
                                 <a href="product-page(image-swatch).html">
-                                    <img src={`${API_BASE_URL}/uploads/${data.File}`}
+                                    <img src={getImageUrl(data.File)}
                                         class="img-fluid blur-up lazyload" alt="" style={{width:"100%",height:"250px"}}/>
                                 </a>
                                 <div class="rating-label"><i class="ri-star-fill"></i><span>4.5</span>

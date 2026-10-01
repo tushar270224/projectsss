@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
-import { API_BASE_URL } from '../config'
+import { API_BASE_URL, getImageUrl } from '../config'
 
 function Sget() {
     useEffect(()=>{
@@ -42,7 +42,7 @@ arr.map((data,i)=>
                             <div class="img-wrapper">
                                 <div class="ribbon"><span>Exclusive</span></div>
                                 <a href="product-page(image-swatch).html">
-                                    <img src={`${API_BASE_URL}/uploads/${data.File}`}
+                                    <img src={getImageUrl(data.File)}
                                         class="img-fluid blur-up lazyload" alt=""/>
                                 </a>
                                 <div class="rating-label"><i class="ri-star-fill"></i><span>4.5</span>

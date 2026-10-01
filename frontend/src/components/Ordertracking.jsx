@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
-import { API_BASE_URL } from '../config'
+import { API_BASE_URL, getImageUrl } from '../config'
 
 const STEPS = ["Processing", "Shipped", "Out for Delivery", "Delivered"]
 
@@ -162,7 +162,7 @@ function Ordertracking() {
                             <tr key={idx}>
                               <td class="product-image">
                                 <img
-                                  src={`${API_BASE_URL}/uploads/${p.File}`}
+                                  src={getImageUrl(p.File)}
                                   class="img-fluid"
                                   style={{ width: "60px" }}
                                   alt=""

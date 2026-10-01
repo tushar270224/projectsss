@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
 import HeroSlider from './HeroSlider'
-import { API_BASE_URL } from '../config'
+import { API_BASE_URL, getImageUrl } from '../config'
 
 function Home() {
   const [products, setProducts] = useState([])
@@ -50,7 +50,7 @@ function Home() {
                   <div className="overflow-hidden">
                     <div className="img-wrapper">
                       <img
-                        src={`${API_BASE_URL}/uploads/${data.File}`}
+                        src={getImageUrl(data.File)}
                         className="img-fluid blur-up lazyload"
                         alt={data.ProductName}
                         style={{ height: "220px", objectFit: "cover", width: "100%" }}
