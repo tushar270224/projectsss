@@ -1,4 +1,4 @@
-const stumodel=require("../model/never")
+const stumodel=require("../model/Never")
 const catup=async(req,res)=>{
     try{
         const  Category=req.body.Category

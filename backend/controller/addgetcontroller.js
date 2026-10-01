@@ -1,4 +1,4 @@
-const stumodel=require("../model/never")
+const stumodel=require("../model/Never")
 const addcat=async(req,res)=>{
 try{
     const result=await stumodel.find()

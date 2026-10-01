@@ -1,5 +1,5 @@
 
-const stumodel = require("../model/never");
+const stumodel = require("../model/Never");
 const student=async(req,res)=>{
 
 try{

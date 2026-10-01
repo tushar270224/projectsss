@@ -1,4 +1,4 @@
-const stumodel=require("../model/never")
+const stumodel=require("../model/Never")
 const catdel=async(req,res)=>{
     try{
         const id=req.params.id
