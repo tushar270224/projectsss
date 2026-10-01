@@ -7,6 +7,7 @@ app.use(cors())
 app.use(express.json())
 const router=require("./routes/userrouter")
 connectDB()
+app.get("/", (req, res) => res.json({ status: "ok" }))
 app.use("/api",router)
 app.use("/uploads", express.static(path.join(__dirname, "uploads")))
 
