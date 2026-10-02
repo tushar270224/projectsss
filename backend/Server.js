@@ -20,8 +20,17 @@ app.use(cors({
 }))
 app.use(express.json())
 const router=require("./routes/userrouter")
-connectDB()
+connectDB().catch((err) => console.log(err))
 app.get("/", (req, res) => res.json({ status: "ok" }))
+app.use("/api", async (req, res, next) => {
+    try {
+        await connectDB()
+        next()
+    } catch (err) {
+        console.log(err)
+        res.status(503).send({ statuscode: 0, mssg: "database unavailable, please try again" })
+    }
+})
 app.use("/api",router)
 app.use("/uploads", express.static(path.join(__dirname, "uploads")))
 
