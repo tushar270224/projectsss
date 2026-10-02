@@ -19,6 +19,7 @@ const  cardd=async(req,res)=>{
 
     }catch(err){
         console.log(err)
+        res.status(500).send({statuscode:0,mssg:"server error"})
     }
 }
 module.exports={cardd}
